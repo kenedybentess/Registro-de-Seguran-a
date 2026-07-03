@@ -10,7 +10,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     * { font-family: 'Inter', sans-serif; }
 .gradient-bg { background: linear-gradient(135deg, #0095D8 0%, #00AEEF 100%); }
-.glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+.glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 0.2); }
 .counter-animation { animation: pulse-scale 2s ease-in-out infinite; }
   @keyframes pulse-scale { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
 .fade-in { animation: fadeIn 0.5s ease-in; }
@@ -26,6 +26,7 @@
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-3">
+          <!-- LOGO ELGIN ATUALIZADO -->
           <div class="bg-white/95 p-2 rounded-xl backdrop-blur-sm">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAz0AAAB9CAYAAADs4mZtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD4SURBVHja7d0xDQAACMOwPfcv3ce3MeCq5ET7EbkbXaJZ3x9Lm5Pit0VT7925sps3KubTMtNeJs2+fXEd6dFQyNvsKnf1jDyLn25imPzRuRt9m1b+sYdi39uZr+TopwN+r/LjrzfCUf607oloIyzI2v1u9v3ZUW4nwW6KY9+7ejMjVNQyd/Xs3IuRPgquTu9jfTldyedMQ468/sxzKZnw9Wv5GZi436/Js2vt1xT0o3I2p0Wxv4WdRXPit0zV0Qycb6crojnVS468/uzzKIjfy+jRsjbzTaN8WbGTdnxzEUx0/kjcjqgX53/R8C3R57lc1dG5Sx0U4CxT1aXJXnGLr/1o3RCw5G2etXt/BvWrMf8Ax24/Pe+dG1jUsvXMGm/nZFdFV+mJp4cxTPH4o4kAkdnO72n+no6Wyuxboong0xqaLeKv3LtPDrmeWOv5tgAVlfAAAAAAAAAABJRU5ErkJggg==" alt="Logo Elgin" class="h-10 md:h-12 w-auto">
           </div>
@@ -119,7 +120,7 @@
           </div>
           <div>
             <label for="accidentDesc" class="block text-sm font-medium text-slate-700 mb-2">Descrição <span class="text-slate-400 font-normal">(opcional)</span></label>
-            <textarea id="accidentDesc" rows="3" placeholder="Ex: Queda no setor de produção" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all outline-none text-slate-800 resize-none"></textarea>
+            <textarea id="accidentDesc" rows="3" placeholder="Ex: Queda no setor de produção" class="w-full px-4 py-3 rounded-xl border-slate-300 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-all outline-none text-slate-800 resize-none"></textarea>
           </div>
           <div>
             <label for="accidentType" class="block text-sm font-medium text-slate-700 mb-2">Tipo <span class="text-slate-400 font-normal">(opcional)</span></label>
@@ -270,7 +271,7 @@
 
   function daysBetween(date1, date2) {
     const d1 = new Date(date1 + 'T00:00:00');
-    const d2 = new Date(date2 + 'T00:00:00');
+    const d2 = new Date(date2 + 'T00:00');
     const diffTime = Math.abs(d2 - d1);
     return Math.floor(diffTime / (1000 * 60 * 60 * 24));
   }
@@ -278,7 +279,7 @@
   function daysSince(dateStr) {
     const today = new Date();
     today.setHours(0, 0);
-    const accidentDate = new Date(dateStr + 'T00:00:00');
+    const accidentDate = new Date(dateStr + 'T00:00');
     accidentDate.setHours(0, 0);
     const diffTime = Math.abs(today - accidentDate);
     return Math.floor(diffTime / (1000 * 60 * 60 * 24));
